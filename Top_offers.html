@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto;
+            gap:10px;
+            width:100%
+        }
+        #container>div>image{
+            width:80%
+        }
+        #conatainer>div{
+            text-align:center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+        h1{
+            text-align: center;
+            color:blue;
+        }
+        #container>div>button{
+            background-color: black;
+            color: white;
+            padding:10px
+        }
+    </style>
+</head>
+<body>
+    <h1>Top_offers</h1>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    let sample=JSON.parse(localStorage.getItem("today_offer"))||[]
+    data(sample)
+    function data(arr){
+        let data=arr["candles"]
+       data.forEach((ele,i)=>{
+            let div=document.createElement("div")
+
+            let image=document.createElement("img")
+            image.setAttribute("src",ele.image);
+
+            let name= document .createElement("h2")
+            name.innerText=ele.name
+
+            let price=document.createElement("h2")
+            price.innerText=ele.price
+
+            let btn=document.createElement("button")
+            btn.innerText="SHOPNOW"
+
+            div.append(image,name,price,btn);
+            document.querySelector("#container").append(div)
+        });
+    }
+   
+
+</script>
