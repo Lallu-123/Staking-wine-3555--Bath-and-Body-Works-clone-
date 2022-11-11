@@ -7,15 +7,18 @@
     <title>unique</title>
     <style>
         #nav{
-            width:90%;
-          
+            width:100%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         
-    text-align: center; 
+    text-align:right; 
+    margin:auto;
     
         
         }
+        
         #nav>h1{
-            color:red
+            color:red;
+            text-align: center;
         }
         #nav>.inp{
             display: flex;
@@ -31,7 +34,7 @@
             
             width:90%; 
         }
-        .nav1>p{
+        .nav1>a{
             margin:30px;
             color:black;
             font-size: large;
@@ -199,16 +202,18 @@
 <body>
     <div id="nav">
         <h1>BATH & BODYWORKS</h1>
+        <a href="sign_up.html">signup</a>
+        <a href="login.html">login</a>
         <input class="inp" placeholder="search">
         <div class="nav1">
-            <p id="top" >Top offer</p>
-            <p> Body Care </p>
-            <p>Candles</p>
-            <p>Wallflowers&Airfreshers</p>
-            <p>Handsoaps&sanitizers</p>
-            <p>mens's shop</p>
-            <p>moxy</p>
-            <p>holidayshop</p>
+            <a href="Top_offers.html">Top offer</a>
+            <a href="body_parts.html"> Body Care </a>
+            <a>Candles</a>
+            <a>Wallflowers&Airfreshers</a>
+            <a>Handsoaps&sanitizers</a>
+            <a>mens's shop</a>
+            <a>moxy</a>
+            <a>holidayshop</a>
         </div>
 
     </div>
@@ -376,10 +381,3 @@
    </div>
 </body>
 </html>
-<script>
-    document.querySelector("#top").addEventListener("click",fun)
-    function fun(){
-        
-    }
-
-</script>

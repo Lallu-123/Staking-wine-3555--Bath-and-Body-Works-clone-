@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>body_care</title>
+    <style>
+        #container{
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto;
+            gap:10px
+    
+        }
+        #container>div{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            text-align: center;
+        }
+        #container>div>image{
+            width:90%
+        }
+        h1{
+            color:blueviolet;
+            text-align: center;
+        }
+        #container>div>button{
+            background-color: black;
+            color:white;
+            padding:10px
+        }
+    </style>
+</head>
+<body>
+    <h1>Body_care</h1>
+    <div id="container"></div>
+    
+</body>
+</html>
+<script>
+    let body=JSON.parse(localStorage.getItem("body_parts"))||[]
+data(body)
+    function data(arr){
+        let data=arr["mens"];
+        data.forEach((elem,i)=>{
+        let div=document.createElement("div")
+
+        let image=document.createElement("img")
+        image.setAttribute("src",elem.image)
+        let name=document.createElement("h2")
+        name.innerText=elem.name
+
+        let price=document.createElement("h2")
+        price.innerText=elem.price
+
+        let btn=document.createElement("button")
+        btn.innerText="SHOP NOW"
+
+        div.append(image,name,price,btn);
+        document.querySelector("#container").append(div)
+        })
+    }
+    
+</script>
