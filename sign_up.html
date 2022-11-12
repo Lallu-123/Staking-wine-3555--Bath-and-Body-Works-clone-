@@ -30,16 +30,16 @@ h1{
 <body>
     <h1>sign_up page</h1>
     <div id="container">
-    <from>
+    <form>
         <label>name</label>
 <input type="name",id="name">
 <label>Email</label>
-<input type="Email",id="Email">
+<input type="Email",id="email">
 <label>Password</label>
 <input type="password",id="password">
 <input type="submit",value=submit>
 
-    </from>
+    </form>
 
 
 
@@ -47,3 +47,22 @@ h1{
     
 </body>
 </html>
+<script>
+    let fromdata=document.querySelector("form")
+  let lsdata=JSON.parse(localStorage.getItem("sign_up"))||[]
+  fromdata.addEventListener("submit",function(){
+    let name=document.querySelector("#name").value;
+    let mail=document.querySelector("#email").value;
+    let pass=document.querySelector("#password").value;
+
+    let obj={
+      name,
+      mail,
+      pass,
+    }
+    lsdata.push(obj)
+
+    localStorage.setItem("sign_up",JSON.stringify(lsdata))
+
+  })
+</script>
