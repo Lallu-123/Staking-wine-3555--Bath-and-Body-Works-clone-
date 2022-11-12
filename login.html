@@ -30,7 +30,7 @@ h1{
 <body>
     <h1>login_page</h1>
     <div id="container">
-    <from>
+    <form>
       
 <label>Email</label>
 <input type="Email",id="Email">
@@ -38,10 +38,31 @@ h1{
 <input type="password",id="password">
 <input type="submit",value=submit>
 
-    </from>
+    </form>
 
 
 
     </div>
 </body>
 </html>
+<script>
+    let data=JSON.parse(localStorage.getItem("sign_up"));
+  
+  let fromdata=document.querySelector("form")
+
+  fromdata.addEventListener("submit",function(){
+    let mail=document.querySelector("#email").value;
+    let pass=document.querySelector("#password").value;
+
+    for(let i=0;i<data.length;i++){
+      if(mail==data[i].mail&&pass==data[i].pass){
+        alert("login successful")
+        break;
+      }else if(mail!=data[i].mail||pass!=data[i].pass){
+        alert("wrong credditinals")
+        break;
+      }
+    }
+  })
+
+</script>
